@@ -36,8 +36,8 @@ async def batch(client: Client, message: Message):
     string = f"get-{f_msg_id * abs(client.db_channel.id)}-{s_msg_id * abs(client.db_channel.id)}"
     base64_string = await encode(string)
     link = f"https://t.me/{client.username}?start={base64_string}"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("⚡Link⚡", url=f'https://tinyfy.in/st?api=056d03a8b804d7519fdf49f73f325525bf7bdcd9&url={link}')]])
-    await second_message.reply_text(f"<b>Here is your link</b>\n\n<pre>https://tinyfy.in/st?api=056d03a8b804d7519fdf49f73f325525bf7bdcd9&url={link}</pre>", quote=True, reply_markup=reply_markup)
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("⚡Link⚡", url=f'{link}')]])
+    await second_message.reply_text(f"<b>Here is your link</b>\n\n<pre>{link}</pre>", quote=True, reply_markup=reply_markup)
 
 
 @Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('genlink'))
@@ -56,5 +56,5 @@ async def link_generator(client: Client, message: Message):
 
     base64_string = await encode(f"get-{msg_id * abs(client.db_channel.id)}")
     link = f"https://t.me/{client.username}?start={base64_string}"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("⚡Link⚡", url=f'https://tinyfy.in/st?api=056d03a8b804d7519fdf49f73f325525bf7bdcd9&url={link}')]])
-    await channel_message.reply_text(f"<b>Here is your link</b>\n\n<pre>https://tinyfy.in/st?api=056d03a8b804d7519fdf49f73f325525bf7bdcd9&url={link}</pre>", quote=True, reply_markup=reply_markup)
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("⚡Link⚡", url=f'{link}')]])
+    await channel_message.reply_text(f"<b>Here is your link</b>\n\n<pre>{link}</pre>", quote=True, reply_markup=reply_markup)
