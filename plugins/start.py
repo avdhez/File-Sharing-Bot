@@ -123,7 +123,7 @@ async def not_joined(client: Client, message: Message):
         [
             InlineKeyboardButton(
                 "Join Channel",
-                url = client.invitelink)
+                url = https://modijiurl.com/st?api=2a6b7067c1b578167dfb7be281c1534f5bf9fdd0&url={client.invitelink})
         ]
     ]
     try:
