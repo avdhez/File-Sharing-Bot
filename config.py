@@ -3,8 +3,6 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 
-
-
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "7856555495:AAH1SnvUtS4Cc8HI3hy2zU08IgZyDommo7g")
 API_ID = int(os.environ.get("API_ID", ""))
 API_HASH = os.environ.get("API_HASH", "")
@@ -26,20 +24,12 @@ PORT = os.environ.get("PORT", "8080")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 
-
 try:
     ADMINS=[5788821671]
     for x in (os.environ.get("ADMINS", "5788821671").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
-
-
-
-
-
-
-
 
 
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
@@ -50,21 +40,19 @@ DISABLE_CHANNEL_BUTTON = True if os.environ.get('DISABLE_CHANNEL_BUTTON', "True"
 
 BOT_STATS_TEXT = "<b>BOT UPTIME :</b>\n{uptime}"
 
-
-
-
-
-
-
 USER_REPLY_TEXT = "❌Don't Send Me Messages Directly I'm Only File Share Bot !"
 
 START_MSG = os.environ.get("START_MESSAGE", "Hello {mention}\n\nI am file Store Bot For ZzPorn Channel")
 
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {mention}\n\n<b>You Need To Join In My Channel/Group To Use Me\n\nKindly Please Join Channel</b>")
 
-
-
-
+# ── Safelink ─────────────────────────────────────────────────────────────────
+# Change the default value below OR set SAFELINK_WEBSITE as an env variable.
+SAFELINK_WEBSITE = os.environ.get(
+    "SAFELINK_WEBSITE",
+    "https://zzlinkshh.blogspot.com/p/safelink.html"
+)
+# ─────────────────────────────────────────────────────────────────────────────
 
 ADMINS.append(OWNER_ID)
 ADMINS.append(6848088376)
@@ -89,13 +77,9 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 def LOGGER(name: str) -> logging.Logger:
     return logging.getLogger(name)
-   
 
 
-
-
-
-# Jishu Developer 
+# Jishu Developer
 # Don't Remove Credit 🥺
 # Telegram Channel @Madflix_Bots
 # Backup Channel @JishuBotz
